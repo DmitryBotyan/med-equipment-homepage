@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@layer base {
+  a[href],
+  button {
+    cursor: pointer;
+  }
+
+  a[href]:hover,
+  button:hover {
+    cursor: pointer;
+  }
+
+  button:disabled,
+  button[aria-disabled="true"] {
+    cursor: not-allowed;
+  }
+
+  /* Prevent iOS zoom on input focus (requires 16px minimum) */
+  @media screen and (max-width: 767px) {
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="password"],
+    input[type="search"],
+    textarea,
+    select {
+      font-size: 16px;
+    }
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar but keep scroll functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
